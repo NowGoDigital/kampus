@@ -31,10 +31,9 @@
             --gradient-secondary: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
             --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.05);
             --transition: all 0.3s ease;
-            --border-radius: 16px;
+            --border-radius: 12px;
         }
 
         html { scroll-behavior: smooth; }
@@ -311,31 +310,31 @@
         /* ========================================
            SECTION COMMON STYLES
         ======================================== */
-        section { padding: 100px 0; }
+        section { padding: 80px 0; /* Reduced padding */ }
 
-        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header { text-align: center; margin-bottom: 50px; }
 
         .section-tag {
             display: inline-block;
             color: var(--secondary-color);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.2rem; /* Reduced size */
             font-weight: 700;
             color: var(--dark-color);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .highlight { color: var(--primary-color); }
 
         .section-subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--gray-color);
             max-width: 600px;
             margin: 0 auto;
@@ -349,7 +348,7 @@
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
         }
 
@@ -364,27 +363,27 @@
 
         .experience-badge {
             position: absolute;
-            bottom: 30px; right: -20px;
+            bottom: 20px; right: -15px;
             background: var(--white);
             color: var(--primary-color);
-            padding: 20px 30px;
+            padding: 15px 25px;
             border-radius: var(--border-radius);
             text-align: center;
             box-shadow: var(--shadow-lg);
             border: 1px solid #eee;
         }
 
-        .exp-number { font-size: 2.5rem; font-weight: 800; color: var(--secondary-color); }
-        .exp-text { font-size: 0.9rem; color: var(--gray-color); }
+        .exp-number { font-size: 2rem; font-weight: 800; color: var(--secondary-color); }
+        .exp-text { font-size: 0.8rem; color: var(--gray-color); }
 
-        .about-content h3 { font-size: 2rem; margin-bottom: 20px; color: var(--dark-color); }
+        .about-content h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--dark-color); }
 
-        .features-list { display: flex; flex-direction: column; gap: 20px; }
+        .features-list { display: flex; flex-direction: column; gap: 15px; }
 
-        .feature-item { display: flex; gap: 15px; align-items: flex-start; }
-        .feature-item i { font-size: 1.2rem; color: var(--secondary-color); margin-top: 5px; }
-        .feature-item h4 { font-size: 1.1rem; margin-bottom: 5px; color: var(--dark-color); }
-        .feature-item p { font-size: 0.95rem; margin: 0; color: var(--gray-color); }
+        .feature-item { display: flex; gap: 12px; align-items: flex-start; }
+        .feature-item i { font-size: 1rem; color: var(--secondary-color); margin-top: 4px; }
+        .feature-item h4 { font-size: 1rem; margin-bottom: 2px; color: var(--dark-color); }
+        .feature-item p { font-size: 0.9rem; margin: 0; color: var(--gray-color); }
 
         /* ========================================
            PROGRAMS SECTION
@@ -393,14 +392,14 @@
 
         .programs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .program-card {
             background: var(--white);
             border-radius: var(--border-radius);
-            padding: 40px 30px;
+            padding: 30px 25px;
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
             position: relative;
@@ -420,39 +419,39 @@
 
         .featured-badge {
             position: absolute;
-            top: 20px; right: 20px;
+            top: 15px; right: 15px;
             background: var(--secondary-color);
             color: var(--white);
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
         }
 
         .program-icon {
-            width: 60px; height: 60px;
+            width: 50px; height: 50px;
             background: var(--light-color);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
 
-        .program-card h3 { font-size: 1.25rem; margin-bottom: 15px; color: var(--dark-color); }
-        .program-card p { color: var(--gray-color); margin-bottom: 20px; font-size: 0.95rem; }
+        .program-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--dark-color); }
+        .program-card p { color: var(--gray-color); margin-bottom: 15px; font-size: 0.9rem; }
 
-        .program-features { list-style: none; margin-bottom: 25px; }
-        .program-features li { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; color: var(--dark-color); }
-        .program-features li i { color: var(--secondary-color); font-size: 0.8rem; }
+        .program-features { list-style: none; margin-bottom: 20px; }
+        .program-features li { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.85rem; color: var(--dark-color); }
+        .program-features li i { color: var(--secondary-color); font-size: 0.7rem; }
 
         .btn-program {
-            display: inline-flex; align-items: center; gap: 8px;
+            display: inline-flex; align-items: center; gap: 6px;
             color: var(--primary-color); text-decoration: none; font-weight: 600; transition: var(--transition);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
-        .btn-program:hover { gap: 12px; color: var(--secondary-color); }
+        .btn-program:hover { gap: 10px; color: var(--secondary-color); }
 
         /* ========================================
            PRICING SECTION
@@ -470,42 +469,43 @@
         .table-header {
             display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
             background: var(--light-color); color: var(--dark-color);
-            padding: 20px 30px; font-weight: 600;
+            padding: 15px 25px; font-weight: 600;
             border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
         }
 
         .table-row {
             display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-            padding: 20px 30px; align-items: center;
+            padding: 15px 25px; align-items: center;
             border-bottom: 1px solid #f5f5f5; transition: var(--transition);
         }
 
         .table-row:hover { background: var(--light-color); }
         .table-row:last-child { border-bottom: none; }
 
-        .col-program { display: flex; align-items: center; gap: 15px; font-weight: 500; color: var(--dark-color); }
-        .col-program i { color: var(--primary-color); font-size: 1.1rem; }
-        .col-price { color: var(--gray-color); text-decoration: line-through; font-size: 0.9rem; }
-        .highlight-price { color: var(--primary-color); font-weight: 700; font-size: 1.1rem; }
+        .col-program { display: flex; align-items: center; gap: 12px; font-weight: 500; color: var(--dark-color); font-size: 0.95rem; }
+        .col-program i { color: var(--primary-color); font-size: 1rem; }
+        .col-price { color: var(--gray-color); text-decoration: line-through; font-size: 0.85rem; }
+        .highlight-price { color: var(--primary-color); font-weight: 700; font-size: 1rem; }
 
         .btn-small {
             background: var(--white); color: var(--primary-color);
-            padding: 8px 20px; border-radius: 50px; text-decoration: none;
-            font-size: 0.85rem; font-weight: 600; transition: var(--transition);
+            padding: 6px 16px; border-radius: 50px; text-decoration: none;
+            font-size: 0.8rem; font-weight: 600; transition: var(--transition);
             display: inline-block; text-align: center;
             border: 1px solid var(--primary-color);
         }
         .btn-small:hover { background: var(--primary-color); color: var(--white); }
 
         .pricing-note {
-            display: flex; align-items: center; gap: 10px; margin-top: 20px;
-            padding: 15px 20px; background: var(--light-color);
+            display: flex; align-items: center; gap: 10px; margin-top: 15px;
+            padding: 12px 15px; background: var(--light-color);
             border-radius: var(--border-radius); color: var(--gray-color);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* ========================================
-           TESTIMONIALS SECTION (MINIMALIS)
+           TESTIMONIALS SECTION
         ======================================== */
         .testimonials { 
             background: var(--light-color); 
@@ -514,13 +514,13 @@
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 25px;
         }
 
         .testimonial-card {
             background: var(--white);
             border-radius: var(--border-radius);
-            padding: 30px;
+            padding: 25px;
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
             border: 1px solid #eee;
@@ -539,14 +539,14 @@
         .testimonial-header {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 15px;
             width: 100%;
         }
 
         .testimonial-image {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             overflow: hidden;
             flex-shrink: 0;
@@ -560,25 +560,25 @@
 
         .testimonial-info h4 {
             color: var(--dark-color);
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 2px;
         }
 
         .testimonial-info span {
             color: var(--gray-color);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
         .rating {
             color: var(--secondary-color);
-            font-size: 0.8rem;
-            margin-bottom: 15px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
         }
 
         .testimonial-content p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--gray-color);
-            line-height: 1.6;
+            line-height: 1.5;
             margin: 0;
             font-style: normal;
         }
@@ -586,300 +586,247 @@
         /* ========================================
            CTA SECTION
         ======================================== */
-        .cta { background: var(--primary-color); padding: 80px 0; text-align: center; color: var(--white); }
-        .cta-content h2 { font-size: 2.5rem; margin-bottom: 15px; }
-        .cta-content p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; }
-        .btn-white { background: var(--white); color: var(--primary-color); }
+        .cta { background: var(--primary-color); padding: 60px 0; text-align: center; color: var(--white); }
+        .cta-content h2 { font-size: 2rem; margin-bottom: 10px; }
+        .cta-content p { font-size: 1rem; opacity: 0.9; margin-bottom: 25px; }
+        .btn-white { background: var(--white); color: var(--primary-color); padding: 12px 28px; font-size: 0.95rem; }
         .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
         /* ========================================
-           CONTACT SECTION (WOW DESIGN)
+           CONTACT SECTION (COMPACT MINIMALIS)
         ======================================== */
         .contact { 
-            background: var(--light-color); 
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Decorative Background Elements */
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: -10%;
-            right: -5%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(255,255,255,0) 70%);
-            border-radius: 50%;
-            z-index: 0;
+            background: var(--white); 
+            padding: 80px 0;
         }
 
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1.2fr; /* Info lebih kecil, Form lebih besar */
-            gap: 0; /* No gap, connected design */
-            background: var(--white);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-            position: relative;
-            z-index: 1;
+            grid-template-columns: 1fr 1.5fr; /* Info smaller, Form wider */
+            gap: 40px;
+            align-items: start;
         }
 
-        /* Left Side: Info (Dark Theme) */
+        /* Left Side: Info (Clean Light Theme) */
         .contact-info-wrapper {
-            background: var(--gradient-primary);
-            color: var(--white);
-            padding: 60px 50px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Pattern Overlay */
-        .contact-info-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-
-        .contact-info-content {
-            position: relative;
-            z-index: 2;
+            padding-right: 20px;
         }
 
         .contact-info-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 15px;
-            line-height: 1.3;
+            margin-bottom: 10px;
+            color: var(--dark-color);
         }
 
         .contact-info-desc {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-            font-size: 1rem;
+            color: var(--gray-color);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
         .info-list {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            margin-bottom: 50px;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .info-item {
             display: flex;
             align-items: flex-start;
-            gap: 20px;
+            gap: 15px;
         }
 
         .info-icon-box {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            width: 40px;
+            height: 40px;
+            background: var(--light-color);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            color: var(--primary-color);
             transition: var(--transition);
         }
 
         .info-item:hover .info-icon-box {
-            background: var(--secondary-color);
-            color: var(--primary-color);
-            transform: scale(1.1);
+            background: var(--primary-color);
+            color: var(--white);
         }
 
         .info-text h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
+            font-size: 0.95rem;
+            margin-bottom: 2px;
             font-weight: 600;
+            color: var(--dark-color);
         }
 
         .info-text p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95rem;
+            color: var(--gray-color);
+            font-size: 0.9rem;
             margin: 0;
         }
 
         .social-contact {
             display: flex;
-            gap: 15px;
-            margin-top: auto;
+            gap: 10px;
         }
 
         .social-contact a {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--light-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: var(--gray-color);
             text-decoration: none;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .social-contact a:hover {
-            background: var(--white);
-            color: var(--primary-color);
-            transform: translateY(-3px);
+            background: var(--primary-color);
+            color: var(--white);
         }
 
-        /* Right Side: Form (Light Theme) */
+        /* Right Side: Form (Compact) */
         .contact-form-wrapper {
-            padding: 60px 50px;
-            background: var(--white);
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
         }
 
         .form-header {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .form-header h3 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: var(--dark-color);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .form-header p {
             color: var(--gray-color);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
         .form-group {
-            margin-bottom: 25px;
-            position: relative;
+            margin-bottom: 15px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 500;
             color: var(--dark-color);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #E5E7EB;
-            border-radius: 12px;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: var(--transition);
-            background: #F9FAFB;
+            background: var(--white);
             color: var(--dark-color);
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--primary-light);
-            background: var(--white);
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
 
         textarea.form-control {
             resize: vertical;
-            min-height: 120px;
+            min-height: 80px;
         }
 
         .btn-submit {
             width: 100%;
-            padding: 16px;
-            background: var(--gradient-primary);
+            padding: 12px;
+            background: var(--primary-color);
             color: var(--white);
             border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+            gap: 8px;
         }
 
         .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
             background: var(--primary-light);
-        }
-
-        /* Map Embed Placeholder */
-        .map-container {
-            margin-top: 40px;
-            border-radius: 12px;
-            overflow: hidden;
-            height: 200px;
-            background: #e5e7eb;
-            position: relative;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
+            transform: translateY(-2px);
         }
 
         /* ========================================
            FOOTER
         ======================================== */
-        .footer { background: var(--dark-color); color: var(--white); padding: 80px 0 30px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
-        .footer-brand .logo { color: var(--white); margin-bottom: 20px; }
-        .footer-brand p { color: #9CA3AF; margin-bottom: 20px; line-height: 1.8; font-size: 0.9rem; }
+        .footer { background: var(--dark-color); color: var(--white); padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 30px; margin-bottom: 40px; }
+        .footer-brand .logo { color: var(--white); margin-bottom: 15px; font-size: 1.3rem; }
+        .footer-brand p { color: #9CA3AF; margin-bottom: 15px; line-height: 1.6; font-size: 0.85rem; }
 
-        .social-links { display: flex; gap: 15px; }
+        .social-links { display: flex; gap: 10px; }
         .social-links a {
-            width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.1);
+            width: 35px; height: 35px; border-radius: 50%; background: rgba(255, 255, 255, 0.1);
             display: flex; align-items: center; justify-content: center; color: var(--white);
-            text-decoration: none; transition: var(--transition);
+            text-decoration: none; transition: var(--transition); font-size: 0.9rem;
         }
         .social-links a:hover { background: var(--secondary-color); color: var(--dark-color); }
 
-        .footer-links h4, .footer-newsletter h4 { margin-bottom: 20px; font-size: 1.1rem; color: var(--white); }
+        .footer-links h4, .footer-newsletter h4 { margin-bottom: 15px; font-size: 1rem; color: var(--white); }
         .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #9CA3AF; text-decoration: none; transition: var(--transition); font-size: 0.9rem; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { color: #9CA3AF; text-decoration: none; transition: var(--transition); font-size: 0.85rem; }
         .footer-links a:hover { color: var(--secondary-color); }
 
-        .footer-newsletter p { color: #9CA3AF; margin-bottom: 15px; font-size: 0.9rem; }
-        .newsletter-form { display: flex; gap: 10px; }
-        .newsletter-form input { flex: 1; padding: 12px 15px; border: none; border-radius: 8px; font-family: 'Poppins', sans-serif; }
+        .footer-newsletter p { color: #9CA3AF; margin-bottom: 10px; font-size: 0.85rem; }
+        .newsletter-form { display: flex; gap: 8px; }
+        .newsletter-form input { flex: 1; padding: 10px 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; }
         .newsletter-form button {
-            padding: 12px 20px; background: var(--secondary-color); border: none;
-            border-radius: 8px; color: var(--dark-color); cursor: pointer; transition: var(--transition);
+            padding: 10px 15px; background: var(--secondary-color); border: none;
+            border-radius: 6px; color: var(--dark-color); cursor: pointer; transition: var(--transition);
         }
         .newsletter-form button:hover { background: var(--white); }
 
         .footer-bottom {
             display: flex; justify-content: space-between; align-items: center;
-            padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .footer-bottom p { color: #9CA3AF; font-size: 0.9rem; }
-        .footer-bottom-links { display: flex; gap: 20px; }
-        .footer-bottom-links a { color: #9CA3AF; text-decoration: none; transition: var(--transition); font-size: 0.9rem; }
+        .footer-bottom p { color: #9CA3AF; font-size: 0.8rem; }
+        .footer-bottom-links { display: flex; gap: 15px; }
+        .footer-bottom-links a { color: #9CA3AF; text-decoration: none; transition: var(--transition); font-size: 0.8rem; }
         .footer-bottom-links a:hover { color: var(--secondary-color); }
 
         /* Scroll Top */
         .scroll-top {
-            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            position: fixed; bottom: 30px; right: 30px; width: 45px; height: 45px;
             border-radius: 50%; background: var(--primary-color); color: var(--white);
             border: none; cursor: pointer; display: none; align-items: center; justify-content: center;
-            font-size: 1.2rem; box-shadow: var(--shadow-md); transition: var(--transition); z-index: 999;
+            font-size: 1rem; box-shadow: var(--shadow-md); transition: var(--transition); z-index: 999;
         }
         .scroll-top.visible { display: flex; }
         .scroll-top:hover { background: var(--secondary-color); color: var(--dark-color); }
@@ -894,7 +841,7 @@
             .hero-title { font-size: 3rem; }
             .hero .container { padding-left: 20px; padding-right: 20px; }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .contact-container { grid-template-columns: 1fr; }
+            .contact-container { grid-template-columns: 1fr; gap: 30px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
         }
@@ -914,7 +861,7 @@
             .hero-stats { justify-content: center; }
             .hero-title { font-size: 2.5rem; }
             
-            .section-title { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
             
             .table-header { display: none; }
             .table-row {
@@ -930,7 +877,7 @@
             
             .testimonials-grid { grid-template-columns: 1fr; }
             
-            .contact-info-wrapper, .contact-form-wrapper { padding: 40px 30px; }
+            .form-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -1238,59 +1185,57 @@
         </div>
     </section>
 
-    <!-- Contact Section (WOW DESIGN) -->
+    <!-- Contact Section (COMPACT MINIMALIS) -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Hubungi Kami</span>
                 <h2 class="section-title">Mari <span class="highlight">Terhubung</span></h2>
-                <p class="section-subtitle">Kami siap membantu menjawab pertanyaan seputar pendaftaran dan program studi</p>
+                <p class="section-subtitle">Kami siap membantu menjawab pertanyaan seputar pendaftaran</p>
             </div>
 
             <div class="contact-container">
                 <!-- Left Side: Info -->
                 <div class="contact-info-wrapper">
-                    <div class="contact-info-content">
-                        <h3 class="contact-info-title">Informasi Kontak</h3>
-                        <p class="contact-info-desc">Silakan hubungi kami melalui saluran berikut atau kunjungi kampus kami secara langsung.</p>
-                        
-                        <div class="info-list">
-                            <div class="info-item">
-                                <div class="info-icon-box"><i class="fas fa-map-marker-alt"></i></div>
-                                <div class="info-text">
-                                    <h4>Alamat Kampus</h4>
-                                    <p>Jl. Pendidikan Vokasi No. 88, Mataram, NTB 83126</p>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-icon-box"><i class="fas fa-phone-alt"></i></div>
-                                <div class="info-text">
-                                    <h4>Telepon / WhatsApp</h4>
-                                    <p>+62 812-3456-7890</p>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-icon-box"><i class="fas fa-envelope"></i></div>
-                                <div class="info-text">
-                                    <h4>Email Resmi</h4>
-                                    <p>admissions@p4mmataram.ac.id</p>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-icon-box"><i class="fas fa-clock"></i></div>
-                                <div class="info-text">
-                                    <h4>Jam Operasional</h4>
-                                    <p>Senin - Jumat: 08.00 - 16.00 WITA</p>
-                                </div>
+                    <h3 class="contact-info-title">Informasi Kontak</h3>
+                    <p class="contact-info-desc">Silakan hubungi kami melalui saluran berikut atau kunjungi kampus kami.</p>
+                    
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="info-icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-text">
+                                <h4>Alamat Kampus</h4>
+                                <p>Jl. Pendidikan Vokasi No. 88, Mataram, NTB</p>
                             </div>
                         </div>
+                        <div class="info-item">
+                            <div class="info-icon-box"><i class="fas fa-phone-alt"></i></div>
+                            <div class="info-text">
+                                <h4>Telepon / WhatsApp</h4>
+                                <p>+62 812-3456-7890</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon-box"><i class="fas fa-envelope"></i></div>
+                            <div class="info-text">
+                                <h4>Email Resmi</h4>
+                                <p>admissions@p4mmataram.ac.id</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon-box"><i class="fas fa-clock"></i></div>
+                            <div class="info-text">
+                                <h4>Jam Operasional</h4>
+                                <p>Senin - Jumat: 08.00 - 16.00 WITA</p>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="social-contact">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
+                    <div class="social-contact">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
@@ -1301,17 +1246,19 @@
                         <p>Isi formulir di bawah ini dan tim kami akan segera menghubungi Anda.</p>
                     </div>
                     <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nama Lengkap</label>
-                            <input type="text" id="name" class="form-control" required placeholder="Masukkan nama lengkap">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nama Lengkap</label>
+                                <input type="text" id="name" class="form-control" required placeholder="Nama Anda">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">No. WhatsApp</label>
+                                <input type="tel" id="phone" class="form-control" required placeholder="+62...">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="email">Alamat Email</label>
                             <input type="email" id="email" class="form-control" required placeholder="contoh@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Nomor WhatsApp</label>
-                            <input type="tel" id="phone" class="form-control" required placeholder="+62 xxx-xxxx-xxxx">
                         </div>
                         <div class="form-group">
                             <label for="program">Program Diminati</label>
@@ -1326,18 +1273,12 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Pesan</label>
-                            <textarea id="message" class="form-control" rows="4" placeholder="Tulis pertanyaan Anda..."></textarea>
+                            <textarea id="message" class="form-control" rows="3" placeholder="Tulis pertanyaan Anda..."></textarea>
                         </div>
                         <button type="submit" class="btn-submit">
                             <i class="fas fa-paper-plane"></i> Kirim Pendaftaran
                         </button>
                     </form>
-
-                    <!-- Map Embed -->
-                    <div class="map-container">
-                        <!-- Using a generic Mataram map embed -->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63438.73632983845!2d116.083333!3d-8.583333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdb7d6438275ab%3A0x4030bfbcaf770b0!2sMataram%2C%20West%20Nusa%20Tenggara!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
                 </div>
             </div>
         </div>
