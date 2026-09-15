@@ -29,9 +29,11 @@
             --white: #FFFFFF;
             --gradient-primary: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
             --gradient-secondary: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.05);
             --transition: all 0.3s ease;
-            --border-radius: 12px;
+            --border-radius: 16px; /* Sedikit lebih bulat untuk kesan modern minimalis */
         }
 
         html { scroll-behavior: smooth; }
@@ -41,7 +43,7 @@
             line-height: 1.6;
             color: var(--dark-color);
             overflow-x: hidden;
-            background-color: var(--light-color);
+            background-color: var(--white); /* Background utama putih bersih */
         }
 
         .container {
@@ -58,7 +60,7 @@
             top: 0; left: 0; right: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-sm);
             z-index: 1000;
             transition: var(--transition);
         }
@@ -94,15 +96,23 @@
             color: var(--dark-color);
             font-weight: 500;
             transition: var(--transition);
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover { color: var(--primary-color); }
 
         .btn-nav {
-            background: var(--gradient-primary);
+            background: var(--primary-color);
             color: var(--white) !important;
-            padding: 10px 25px;
+            padding: 10px 24px;
             border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-nav:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
         }
 
         .mobile-menu-toggle {
@@ -115,7 +125,7 @@
         }
 
         /* ========================================
-           HERO SECTION (MULTI-SLIDE CONTENT)
+           HERO SECTION
         ======================================== */
         .hero {
             min-height: 100vh;
@@ -201,6 +211,7 @@
             opacity: 0.9;
             margin-bottom: 35px;
             max-width: 700px; 
+            font-weight: 300;
         }
 
         .hero-buttons {
@@ -224,13 +235,14 @@
         }
 
         .btn-primary {
-            background: var(--gradient-secondary);
-            color: var(--dark-color);
+            background: var(--secondary-color);
+            color: var(--primary-color);
         }
 
         .btn-primary:hover {
+            background: var(--white);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         .btn-outline {
@@ -304,13 +316,12 @@
 
         .section-tag {
             display: inline-block;
-            background: var(--gradient-secondary);
-            color: var(--dark-color);
-            padding: 8px 20px;
-            border-radius: 50px;
+            color: var(--secondary-color);
             font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 15px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .section-title {
@@ -345,7 +356,7 @@
             position: relative;
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
         }
 
         .about-image img { width: 100%; height: auto; display: block; }
@@ -353,25 +364,26 @@
         .experience-badge {
             position: absolute;
             bottom: 30px; right: -20px;
-            background: var(--gradient-primary);
-            color: var(--white);
+            background: var(--white);
+            color: var(--primary-color);
             padding: 20px 30px;
             border-radius: var(--border-radius);
             text-align: center;
             box-shadow: var(--shadow-lg);
+            border: 1px solid #eee;
         }
 
-        .exp-number { font-size: 2.5rem; font-weight: 800; }
-        .exp-text { font-size: 0.9rem; }
+        .exp-number { font-size: 2.5rem; font-weight: 800; color: var(--secondary-color); }
+        .exp-text { font-size: 0.9rem; color: var(--gray-color); }
 
         .about-content h3 { font-size: 2rem; margin-bottom: 20px; color: var(--dark-color); }
 
         .features-list { display: flex; flex-direction: column; gap: 20px; }
 
         .feature-item { display: flex; gap: 15px; align-items: flex-start; }
-        .feature-item i { font-size: 1.5rem; color: var(--secondary-color); margin-top: 5px; }
+        .feature-item i { font-size: 1.2rem; color: var(--secondary-color); margin-top: 5px; }
         .feature-item h4 { font-size: 1.1rem; margin-bottom: 5px; color: var(--dark-color); }
-        .feature-item p { font-size: 0.95rem; margin: 0; }
+        .feature-item p { font-size: 0.95rem; margin: 0; color: var(--gray-color); }
 
         /* ========================================
            PROGRAMS SECTION
@@ -388,56 +400,58 @@
             background: var(--white);
             border-radius: var(--border-radius);
             padding: 40px 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
-            border: 2px solid transparent;
+            border: 1px solid #eee;
         }
 
         .program-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
             border-color: var(--primary-light);
         }
 
         .program-card.featured {
-            border-color: var(--secondary-color);
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(251, 191, 36, 0.05) 100%);
+            border: 2px solid var(--secondary-color);
         }
 
         .featured-badge {
             position: absolute;
-            top: 20px; right: -35px;
-            background: var(--gradient-secondary);
-            color: var(--dark-color);
-            padding: 5px 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transform: rotate(45deg);
+            top: 20px; right: 20px;
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .program-icon {
-            width: 70px; height: 70px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
+            width: 60px; height: 60px;
+            background: var(--light-color);
+            border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
         }
 
-        .program-icon i { font-size: 1.8rem; color: var(--white); }
-        .program-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--dark-color); }
+        .program-card h3 { font-size: 1.25rem; margin-bottom: 15px; color: var(--dark-color); }
         .program-card p { color: var(--gray-color); margin-bottom: 20px; font-size: 0.95rem; }
 
         .program-features { list-style: none; margin-bottom: 25px; }
         .program-features li { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; color: var(--dark-color); }
-        .program-features li i { color: var(--secondary-color); }
+        .program-features li i { color: var(--secondary-color); font-size: 0.8rem; }
 
         .btn-program {
             display: inline-flex; align-items: center; gap: 8px;
             color: var(--primary-color); text-decoration: none; font-weight: 600; transition: var(--transition);
+            font-size: 0.95rem;
         }
-        .btn-program:hover { gap: 15px; color: var(--secondary-color); }
+        .btn-program:hover { gap: 12px; color: var(--secondary-color); }
 
         /* ========================================
            PRICING SECTION
@@ -448,196 +462,171 @@
             background: var(--white);
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid #E5E7EB;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #eee;
         }
 
         .table-header {
             display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-            background: var(--gradient-primary); color: var(--white);
+            background: var(--light-color); color: var(--dark-color);
             padding: 20px 30px; font-weight: 600;
+            border-bottom: 1px solid #eee;
         }
 
         .table-row {
             display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
             padding: 20px 30px; align-items: center;
-            border-bottom: 1px solid #E5E7EB; transition: var(--transition);
+            border-bottom: 1px solid #f5f5f5; transition: var(--transition);
         }
 
-        .table-row:hover { background: rgba(59, 130, 246, 0.05); }
+        .table-row:hover { background: var(--light-color); }
         .table-row:last-child { border-bottom: none; }
 
-        .col-program { display: flex; align-items: center; gap: 15px; font-weight: 500; }
-        .col-program i { color: var(--primary-color); font-size: 1.2rem; }
-        .col-price { color: var(--gray-color); text-decoration: line-through; }
-        .highlight-price { color: var(--secondary-color); font-weight: 700; font-size: 1.1rem; }
+        .col-program { display: flex; align-items: center; gap: 15px; font-weight: 500; color: var(--dark-color); }
+        .col-program i { color: var(--primary-color); font-size: 1.1rem; }
+        .col-price { color: var(--gray-color); text-decoration: line-through; font-size: 0.9rem; }
+        .highlight-price { color: var(--primary-color); font-weight: 700; font-size: 1.1rem; }
 
         .btn-small {
-            background: var(--gradient-primary); color: var(--white);
+            background: var(--white); color: var(--primary-color);
             padding: 8px 20px; border-radius: 50px; text-decoration: none;
-            font-size: 0.9rem; font-weight: 600; transition: var(--transition);
+            font-size: 0.85rem; font-weight: 600; transition: var(--transition);
             display: inline-block; text-align: center;
+            border: 1px solid var(--primary-color);
         }
-        .btn-small:hover { transform: scale(1.05); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn-small:hover { background: var(--primary-color); color: var(--white); }
 
         .pricing-note {
             display: flex; align-items: center; gap: 10px; margin-top: 20px;
-            padding: 15px 20px; background: rgba(59, 130, 246, 0.1);
-            border-radius: var(--border-radius); color: var(--primary-color);
+            padding: 15px 20px; background: var(--light-color);
+            border-radius: var(--border-radius); color: var(--gray-color);
+            font-size: 0.9rem;
         }
 
         /* ========================================
-           TESTIMONIALS SECTION (NEW GRID LAYOUT)
+           TESTIMONIALS SECTION (MINIMALIS)
         ======================================== */
         .testimonials { 
             background: var(--light-color); 
-            position: relative;
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 Kolom sejajar */
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
 
         .testimonial-card {
             background: var(--white);
             border-radius: var(--border-radius);
-            padding: 40px 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid #eee;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start; /* Rata kiri untuk kesan minimalis */
+            text-align: left;
         }
 
         .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-light);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: #ddd;
         }
 
-        /* Decorative Quote Icon Background */
-        .testimonial-card::before {
-            content: '\f10d'; /* FontAwesome quote-left */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 4rem;
-            color: rgba(30, 58, 138, 0.05); /* Very light blue */
-            z-index: 0;
+        /* Header Card: Foto + Nama */
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            width: 100%;
         }
 
         .testimonial-image {
-            width: 90px;
-            height: 90px;
+            width: 50px; /* Lebih kecil */
+            height: 50px;
             border-radius: 50%;
             overflow: hidden;
-            margin-bottom: 20px;
-            border: 3px solid var(--secondary-color);
-            padding: 3px;
-            background: var(--white);
-            z-index: 1;
-            position: relative;
+            flex-shrink: 0;
         }
 
         .testimonial-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 50%;
+        }
+
+        .testimonial-info h4 {
+            color: var(--dark-color);
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .testimonial-info span {
+            color: var(--gray-color);
+            font-size: 0.8rem;
         }
 
         .rating {
             color: var(--secondary-color);
+            font-size: 0.8rem;
             margin-bottom: 15px;
-            font-size: 1rem;
-            z-index: 1;
-            position: relative;
         }
 
         .testimonial-content p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--gray-color);
-            margin-bottom: 25px;
-            line-height: 1.7;
-            font-style: italic;
-            z-index: 1;
-            position: relative;
-            flex-grow: 1; /* Push author to bottom */
-        }
-
-        .testimonial-author {
-            z-index: 1;
-            position: relative;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-            width: 100%;
-        }
-
-        .testimonial-author h4 {
-            color: var(--dark-color);
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .testimonial-author span {
-            color: var(--primary-color);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            line-height: 1.6;
+            margin: 0;
+            font-style: normal; /* Tidak italic agar lebih clean */
         }
 
         /* ========================================
            CTA SECTION
         ======================================== */
-        .cta { background: var(--gradient-primary); padding: 80px 0; text-align: center; color: var(--white); }
+        .cta { background: var(--primary-color); padding: 80px 0; text-align: center; color: var(--white); }
         .cta-content h2 { font-size: 2.5rem; margin-bottom: 15px; }
-        .cta-content p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+        .cta-content p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; }
         .btn-white { background: var(--white); color: var(--primary-color); }
-        .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3); }
+        .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
         /* ========================================
            CONTACT SECTION
         ======================================== */
         .contact { background: var(--white); }
         .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; }
-        .contact-info { display: flex; flex-direction: column; gap: 25px; }
+        .contact-info { display: flex; flex-direction: column; gap: 20px; }
 
         .info-card {
-            display: flex; gap: 20px; align-items: flex-start; background: var(--light-color);
-            padding: 25px; border-radius: var(--border-radius); box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex; gap: 20px; align-items: center; background: var(--white);
+            padding: 20px; border-radius: var(--border-radius); border: 1px solid #eee;
             transition: var(--transition);
         }
 
-        .info-card:hover { transform: translateX(10px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .info-card:hover { border-color: var(--primary-light); box-shadow: var(--shadow-sm); }
 
         .info-icon {
-            width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 50%;
+            width: 45px; height: 45px; background: var(--light-color); border-radius: 50%;
             display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            color: var(--primary-color);
         }
 
-        .info-icon i { color: var(--white); font-size: 1.2rem; }
-        .info-card h4 { margin-bottom: 5px; color: var(--dark-color); }
-        .info-card p { color: var(--gray-color); font-size: 0.95rem; }
+        .info-card h4 { margin-bottom: 2px; color: var(--dark-color); font-size: 1rem; }
+        .info-card p { color: var(--gray-color); font-size: 0.9rem; margin: 0; }
 
         .contact-form-wrapper {
-            background: var(--light-color); padding: 40px; border-radius: var(--border-radius);
-            box-shadow: var(--shadow-lg);
+            background: var(--white); padding: 40px; border-radius: var(--border-radius);
+            border: 1px solid #eee;
+            box-shadow: var(--shadow-sm);
         }
 
         .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--dark-color); }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--dark-color); font-size: 0.9rem; }
 
         .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 12px 15px; border: 2px solid #E5E7EB; border-radius: 8px;
+            width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px;
             font-family: 'Poppins', sans-serif; font-size: 1rem; transition: var(--transition); background: var(--white);
         }
 
@@ -645,7 +634,8 @@
             outline: none; border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
 
-        .btn-full { width: 100%; justify-content: center; }
+        .btn-full { width: 100%; justify-content: center; background: var(--primary-color); color: white; }
+        .btn-full:hover { background: var(--primary-light); }
 
         /* ========================================
            FOOTER
@@ -653,7 +643,7 @@
         .footer { background: var(--dark-color); color: var(--white); padding: 80px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
         .footer-brand .logo { color: var(--white); margin-bottom: 20px; }
-        .footer-brand p { color: #9CA3AF; margin-bottom: 20px; line-height: 1.8; }
+        .footer-brand p { color: #9CA3AF; margin-bottom: 20px; line-height: 1.8; font-size: 0.9rem; }
 
         .social-links { display: flex; gap: 15px; }
         .social-links a {
@@ -661,41 +651,41 @@
             display: flex; align-items: center; justify-content: center; color: var(--white);
             text-decoration: none; transition: var(--transition);
         }
-        .social-links a:hover { background: var(--secondary-color); transform: translateY(-3px); }
+        .social-links a:hover { background: var(--secondary-color); color: var(--dark-color); }
 
-        .footer-links h4, .footer-newsletter h4 { margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-links h4, .footer-newsletter h4 { margin-bottom: 20px; font-size: 1.1rem; color: var(--white); }
         .footer-links ul { list-style: none; }
         .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #9CA3AF; text-decoration: none; transition: var(--transition); }
-        .footer-links a:hover { color: var(--secondary-color); padding-left: 5px; }
+        .footer-links a { color: #9CA3AF; text-decoration: none; transition: var(--transition); font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--secondary-color); }
 
-        .footer-newsletter p { color: #9CA3AF; margin-bottom: 15px; }
+        .footer-newsletter p { color: #9CA3AF; margin-bottom: 15px; font-size: 0.9rem; }
         .newsletter-form { display: flex; gap: 10px; }
         .newsletter-form input { flex: 1; padding: 12px 15px; border: none; border-radius: 8px; font-family: 'Poppins', sans-serif; }
         .newsletter-form button {
-            padding: 12px 20px; background: var(--gradient-secondary); border: none;
+            padding: 12px 20px; background: var(--secondary-color); border: none;
             border-radius: 8px; color: var(--dark-color); cursor: pointer; transition: var(--transition);
         }
-        .newsletter-form button:hover { transform: scale(1.05); }
+        .newsletter-form button:hover { background: var(--white); }
 
         .footer-bottom {
             display: flex; justify-content: space-between; align-items: center;
             padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .footer-bottom p { color: #9CA3AF; }
+        .footer-bottom p { color: #9CA3AF; font-size: 0.9rem; }
         .footer-bottom-links { display: flex; gap: 20px; }
-        .footer-bottom-links a { color: #9CA3AF; text-decoration: none; transition: var(--transition); }
+        .footer-bottom-links a { color: #9CA3AF; text-decoration: none; transition: var(--transition); font-size: 0.9rem; }
         .footer-bottom-links a:hover { color: var(--secondary-color); }
 
         /* Scroll Top */
         .scroll-top {
             position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
-            border-radius: 50%; background: var(--gradient-primary); color: var(--white);
+            border-radius: 50%; background: var(--primary-color); color: var(--white);
             border: none; cursor: pointer; display: none; align-items: center; justify-content: center;
-            font-size: 1.2rem; box-shadow: var(--shadow-lg); transition: var(--transition); z-index: 999;
+            font-size: 1.2rem; box-shadow: var(--shadow-md); transition: var(--transition); z-index: 999;
         }
         .scroll-top.visible { display: flex; }
-        .scroll-top:hover { transform: translateY(-5px); }
+        .scroll-top:hover { background: var(--secondary-color); color: var(--dark-color); }
 
         /* Animations */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -709,7 +699,7 @@
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .contact-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
-            .testimonials-grid { grid-template-columns: repeat(2, 1fr); } /* 2 kolom di tablet */
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
@@ -732,7 +722,7 @@
             .table-header { display: none; }
             .table-row {
                 grid-template-columns: 1fr; gap: 10px; padding: 20px;
-                border: 1px solid #E5E7EB; margin-bottom: 15px; border-radius: var(--border-radius);
+                border: 1px solid #eee; margin-bottom: 15px; border-radius: var(--border-radius);
             }
             .col-program { font-weight: 700; margin-bottom: 10px; }
             
@@ -741,7 +731,7 @@
             
             .slider-indicators { display: none; }
             
-            .testimonials-grid { grid-template-columns: 1fr; } /* 1 kolom di HP */
+            .testimonials-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -769,9 +759,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Multi-Slide Content -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- Background Slides (3 Images) -->
         <div class="hero-slider-bg active" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop');"></div>
         <div class="hero-slider-bg" style="background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a782?q=80&w=2070&auto=format&fit=crop');"></div>
         <div class="hero-slider-bg" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop');"></div>
@@ -779,19 +768,11 @@
         <div class="hero-overlay"></div>
         
         <div class="container">
-            <!-- Slide Content 1: Karir -->
+            <!-- Slide 1 -->
             <div class="hero-content-slide active" data-index="0">
-                <div class="hero-badge">
-                    <i class="fas fa-star"></i>
-                    <span>Pendidikan Vokasi #1 di NTB</span>
-                </div>
-                <h1 class="hero-title">
-                    Wujudkan Karir <br>
-                    <span class="gradient-text">Impianmu</span> Bersama Kami
-                </h1>
-                <p class="hero-subtitle">
-                    P4M Mataram menghadirkan pendidikan vokasi berbasis industri dengan fasilitas modern dan kurikulum internasional untuk memastikan Anda siap kerja dalam waktu singkat.
-                </p>
+                <div class="hero-badge"><i class="fas fa-star"></i><span>Pendidikan Vokasi #1 di NTB</span></div>
+                <h1 class="hero-title">Wujudkan Karir <br><span class="gradient-text">Impianmu</span> Bersama Kami</h1>
+                <p class="hero-subtitle">P4M Mataram menghadirkan pendidikan vokasi berbasis industri dengan fasilitas modern dan kurikulum internasional untuk memastikan Anda siap kerja dalam waktu singkat.</p>
                 <div class="hero-buttons">
                     <a href="#programs" class="btn btn-primary"><i class="fas fa-book-open"></i> Lihat Program</a>
                     <a href="#contact" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Hubungi Kami</a>
@@ -803,19 +784,11 @@
                 </div>
             </div>
 
-            <!-- Slide Content 2: Fasilitas & Skill -->
+            <!-- Slide 2 -->
             <div class="hero-content-slide" data-index="1">
-                <div class="hero-badge">
-                    <i class="fas fa-laptop-code"></i>
-                    <span>Fasilitas Standar Industri</span>
-                </div>
-                <h1 class="hero-title">
-                    Kuasai Skill <br>
-                    <span class="gradient-text">Praktis</span> Masa Kini
-                </h1>
-                <p class="hero-subtitle">
-                    Belajar langsung dengan peralatan terkini di laboratorium komputer, studio desain, dan mockup hotel. Kurikulum kami 70% praktek, 30% teori untuk hasil maksimal.
-                </p>
+                <div class="hero-badge"><i class="fas fa-laptop-code"></i><span>Fasilitas Standar Industri</span></div>
+                <h1 class="hero-title">Kuasai Skill <br><span class="gradient-text">Praktis</span> Masa Kini</h1>
+                <p class="hero-subtitle">Belajar langsung dengan peralatan terkini di laboratorium komputer, studio desain, dan mockup hotel. Kurikulum kami 70% praktek, 30% teori untuk hasil maksimal.</p>
                 <div class="hero-buttons">
                     <a href="#about" class="btn btn-primary"><i class="fas fa-building"></i> Virtual Tour</a>
                     <a href="#programs" class="btn btn-outline"><i class="fas fa-list"></i> Detail Kurikulum</a>
@@ -827,19 +800,11 @@
                 </div>
             </div>
 
-            <!-- Slide Content 3: Jaringan & Kerjasama -->
+            <!-- Slide 3 -->
             <div class="hero-content-slide" data-index="2">
-                <div class="hero-badge">
-                    <i class="fas fa-handshake"></i>
-                    <span>Jaringan Kerjasama Luas</span>
-                </div>
-                <h1 class="hero-title">
-                    Jembatan Menuju <br>
-                    <span class="gradient-text">Dunia Kerja</span> Global
-                </h1>
-                <p class="hero-subtitle">
-                    Kami bekerjasama dengan 50+ perusahaan mitra nasional dan internasional. Lulusan P4M Mataram diprioritaskan untuk magang dan penempatan kerja di perusahaan ternama.
-                </p>
+                <div class="hero-badge"><i class="fas fa-handshake"></i><span>Jaringan Kerjasama Luas</span></div>
+                <h1 class="hero-title">Jembatan Menuju <br><span class="gradient-text">Dunia Kerja</span> Global</h1>
+                <p class="hero-subtitle">Kami bekerjasama dengan 50+ perusahaan mitra nasional dan internasional. Lulusan P4M Mataram diprioritaskan untuk magang dan penempatan kerja di perusahaan ternama.</p>
                 <div class="hero-buttons">
                     <a href="#testimonials" class="btn btn-primary"><i class="fas fa-users"></i> Cerita Alumni</a>
                     <a href="#contact" class="btn btn-outline"><i class="fas fa-file-alt"></i> Daftar Sekarang</a>
@@ -852,14 +817,12 @@
             </div>
         </div>
 
-        <!-- Slider Indicators -->
         <div class="slider-indicators">
             <div class="indicator active" data-index="0"></div>
             <div class="indicator" data-index="1"></div>
             <div class="indicator" data-index="2"></div>
         </div>
 
-        <!-- Wave Shape Bottom -->
         <div class="hero-wave">
             <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#ffffff"/>
@@ -872,7 +835,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Tentang Kami</span>
-                <h2 class="section-title">Pendidikan Vokasi <span class="highlight">TERBAIK & TERHEBAT</span></h2>
+                <h2 class="section-title">Pendidikan Vokasi <span class="highlight">TERBAIK</span></h2>
                 <p class="section-subtitle">Kampus P4M Mataram menyediakan pendidikan berkualitas dengan pelayanan terbaik</p>
             </div>
             <div class="about-grid">
@@ -885,31 +848,19 @@
                 </div>
                 <div class="about-content">
                     <h3>Membangun Generasi Terampil & Siap Kerja</h3>
-                    <p>
-                        P4M Mataram adalah institusi pendidikan vokasi yang menawarkan program D1 (Diploma 1) 
-                        dengan fokus pada keterampilan praktis yang langsung applicable di dunia kerja.
-                    </p>
+                    <p>P4M Mataram adalah institusi pendidikan vokasi yang menawarkan program D1 (Diploma 1) dengan fokus pada keterampilan praktis yang langsung applicable di dunia kerja.</p>
                     <div class="features-list">
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Kurikulum Industri</h4>
-                                <p>Dirancang bersama praktisi industri terkemuka</p>
-                            </div>
+                            <div><h4>Kurikulum Industri</h4><p>Dirancang bersama praktisi industri terkemuka</p></div>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Fasilitas Modern</h4>
-                                <p>Laboratorium dan peralatan standar industri</p>
-                            </div>
+                            <div><h4>Fasilitas Modern</h4><p>Laboratorium dan peralatan standar industri</p></div>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Jaringan Karir</h4>
-                                <p>Kerjasama dengan 100+ perusahaan mitra</p>
-                            </div>
+                            <div><h4>Jaringan Karir</h4><p>Kerjasama dengan 100+ perusahaan mitra</p></div>
                         </div>
                     </div>
                 </div>
@@ -928,7 +879,7 @@
             <div class="programs-grid">
                 <div class="program-card">
                     <div class="program-icon"><i class="fas fa-hotel"></i></div>
-                    <h3>Manajemen Perhotelan & Kapal Pesiar</h3>
+                    <h3>Manajemen Perhotelan</h3>
                     <p>Pelajari manajemen hospitality dan peluang karir di industri kapal pesiar internasional.</p>
                     <ul class="program-features">
                         <li><i class="fas fa-check"></i> Durasi 1 Tahun</li>
@@ -940,7 +891,7 @@
                 <div class="program-card featured">
                     <div class="featured-badge">Populer</div>
                     <div class="program-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Komputer Digital Bisnis</h3>
+                    <h3>Digital Bisnis</h3>
                     <p>Kuasai teknologi digital dan strategi bisnis online untuk era transformasi digital.</p>
                     <ul class="program-features">
                         <li><i class="fas fa-check"></i> Durasi 1 Tahun</li>
@@ -973,7 +924,7 @@
                 </div>
                 <div class="program-card">
                     <div class="program-icon"><i class="fas fa-palette"></i></div>
-                    <h3>Komputer Design Grafis</h3>
+                    <h3>Desain Grafis</h3>
                     <p>Kuasai software design profesional dan bangun portofolio kreatifmu.</p>
                     <ul class="program-features">
                         <li><i class="fas fa-check"></i> Durasi 1 Tahun</li>
@@ -991,24 +942,24 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Investasi Pendidikan</span>
-                <h2 class="section-title">Biaya <span class="highlight">Terjangkau</span>, Kualitas Premium</h2>
+                <h2 class="section-title">Biaya <span class="highlight">Terjangkau</span></h2>
                 <p class="section-subtitle">Pilihan paket dengan potongan spesial untuk pendaftar awal</p>
             </div>
             <div class="pricing-table">
                 <div class="table-header">
-                    <div class="col-program">Program Vokasi Luring</div>
-                    <div class="col-price">Total Biaya</div>
-                    <div class="col-discount">Setelah Potongan</div>
+                    <div class="col-program">Program Vokasi</div>
+                    <div class="col-price">Normal</div>
+                    <div class="col-discount">Promo</div>
                     <div class="col-action">Aksi</div>
                 </div>
                 <div class="table-row">
-                    <div class="col-program"><i class="fas fa-hotel"></i><span>Manajemen Perhotelan & Kapal Pesiar</span></div>
+                    <div class="col-program"><i class="fas fa-hotel"></i><span>Manajemen Perhotelan</span></div>
                     <div class="col-price">Rp 18.000.000</div>
                     <div class="col-discount highlight-price">Rp 13.450.000</div>
                     <div class="col-action"><a href="#contact" class="btn-small">Daftar</a></div>
                 </div>
                 <div class="table-row">
-                    <div class="col-program"><i class="fas fa-laptop-code"></i><span>Komputer Digital Bisnis</span></div>
+                    <div class="col-program"><i class="fas fa-laptop-code"></i><span>Digital Bisnis</span></div>
                     <div class="col-price">Rp 15.000.000</div>
                     <div class="col-discount highlight-price">Rp 10.450.000</div>
                     <div class="col-action"><a href="#contact" class="btn-small">Daftar</a></div>
@@ -1026,7 +977,7 @@
                     <div class="col-action"><a href="#contact" class="btn-small">Daftar</a></div>
                 </div>
                 <div class="table-row">
-                    <div class="col-program"><i class="fas fa-palette"></i><span>Komputer Design Grafis</span></div>
+                    <div class="col-program"><i class="fas fa-palette"></i><span>Desain Grafis</span></div>
                     <div class="col-price">Rp 15.000.000</div>
                     <div class="col-discount highlight-price">Rp 10.450.000</div>
                     <div class="col-action"><a href="#contact" class="btn-small">Daftar</a></div>
@@ -1034,69 +985,75 @@
             </div>
             <div class="pricing-note">
                 <i class="fas fa-info-circle"></i>
-                <p>*Harga sudah termasuk materi pembelajaran, sertifikasi, dan fasilitas kampus. Cicilan tersedia.</p>
+                <p>*Harga sudah termasuk materi, sertifikasi, dan fasilitas. Cicilan tersedia.</p>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section (GRID LAYOUT) -->
+    <!-- Testimonials Section (MINIMALIS GRID) -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Testimoni</span>
-                <h2 class="section-title">Apa Kata <span class="highlight">Alumni Kami</span>?</h2>
-                <p class="section-subtitle">Cerita sukses dari para lulusan P4M Mataram yang telah berkarir di berbagai industri</p>
+                <h2 class="section-title">Kata <span class="highlight">Alumni</span></h2>
+                <p class="section-subtitle">Cerita sukses dari para lulusan P4M Mataram</p>
             </div>
             
             <div class="testimonials-grid">
                 <!-- Card 1 -->
                 <div class="testimonial-card">
-                    <div class="testimonial-image">
-                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 1">
+                    <div class="testimonial-header">
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 1">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Ahmad Rizki</h4>
+                            <span>Staff Hotel Bintang 5</span>
+                        </div>
                     </div>
                     <div class="rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-content">
-                        <p>"Pendidikan di P4M Mataram sangat praktis dan langsung applicable. Saya langsung mendapat pekerjaan setelah lulus berkat jaringan industri yang kuat."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Ahmad Rizki</h4>
-                        <span>Staff Hotel Bintang 5</span>
+                        <p>"Pendidikan di P4M sangat praktis. Saya langsung mendapat pekerjaan setelah lulus berkat jaringan industri yang kuat."</p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="testimonial-card">
-                    <div class="testimonial-image">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 2">
+                    <div class="testimonial-header">
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 2">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Siti Nurhaliza</h4>
+                            <span>Digital Marketing</span>
+                        </div>
                     </div>
                     <div class="rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-content">
-                        <p>"Kurikulum yang update dan pengajar yang berpengalaman membuat saya siap menghadapi tantangan dunia kerja digital. Terima kasih P4M Mataram!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Siti Nurhaliza</h4>
-                        <span>Digital Marketing Specialist</span>
+                        <p>"Kurikulum update dan pengajar berpengalaman membuat saya siap menghadapi tantangan dunia kerja digital."</p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="testimonial-card">
-                    <div class="testimonial-image">
-                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 3">
+                    <div class="testimonial-header">
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 3">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Budi Santoso</h4>
+                            <span>Freelance Designer</span>
+                        </div>
                     </div>
                     <div class="rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-content">
-                        <p>"Fasilitas lengkap dan lingkungan belajar yang kondusif. Saya mengembangkan skill design grafis yang sekarang menjadi sumber penghasilan utama saya."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Budi Santoso</h4>
-                        <span>Freelance Designer</span>
+                        <p>"Fasilitas lengkap dan lingkungan belajar kondusif. Skill design grafis saya berkembang pesat di sini."</p>
                     </div>
                 </div>
             </div>
@@ -1150,15 +1107,15 @@
                             <label for="program">Program yang Diminati</label>
                             <select id="program" name="program" required>
                                 <option value="">Pilih Program</option>
-                                <option value="perhotelan">Manajemen Perhotelan & Kapal Pesiar</option>
-                                <option value="digital-bisnis">Komputer Digital Bisnis</option>
+                                <option value="perhotelan">Manajemen Perhotelan</option>
+                                <option value="digital-bisnis">Digital Bisnis</option>
                                 <option value="administrasi">Administrasi Perkantoran</option>
                                 <option value="komunikasi">Komunikasi Bisnis</option>
-                                <option value="design-grafis">Komputer Design Grafis</option>
+                                <option value="design-grafis">Desain Grafis</option>
                             </select>
                         </div>
                         <div class="form-group"><label for="message">Pesan</label><textarea id="message" name="message" rows="4" placeholder="Tulis pesan atau pertanyaan Anda..."></textarea></div>
-                        <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+                        <button type="submit" class="btn btn-full">Kirim Pesan</button>
                     </form>
                 </div>
             </div>
@@ -1171,7 +1128,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="logo"><i class="fas fa-graduation-cap"></i><span>P4M Mataram</span></a>
-                    <p>Institusi pendidikan vokasi terpercaya yang menghasilkan lulusan siap kerja dengan keterampilan praktis dan sertifikasi profesional.</p>
+                    <p>Institusi pendidikan vokasi terpercaya yang menghasilkan lulusan siap kerja dengan keterampilan praktis.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1190,7 +1147,7 @@
                     <h4>Program</h4>
                     <ul>
                         <li><a href="#">Manajemen Perhotelan</a></li><li><a href="#">Digital Bisnis</a></li>
-                        <li><a href="#">Administrasi Perkantoran</a></li><li><a href="#">Komunikasi Bisnis</a></li><li><a href="#">Design Grafis</a></li>
+                        <li><a href="#">Administrasi Perkantoran</a></li><li><a href="#">Komunikasi Bisnis</a></li><li><a href="#">Desain Grafis</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
@@ -1257,9 +1214,7 @@
         // Scroll Top
         scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // ========================================
-        // HERO SLIDER LOGIC (Sync BG + Text)
-        // ========================================
+        // Hero Slider
         const heroSlides = document.querySelectorAll('.hero-slider-bg');
         const heroContents = document.querySelectorAll('.hero-content-slide');
         const indicators = document.querySelectorAll('.indicator');
@@ -1270,11 +1225,9 @@
             heroSlides.forEach(s => s.classList.remove('active'));
             heroContents.forEach(c => c.classList.remove('active'));
             indicators.forEach(i => i.classList.remove('active'));
-
             heroSlides[index].classList.add('active');
             heroContents[index].classList.add('active');
             indicators[index].classList.add('active');
-            
             currentSlideIndex = index;
         }
 
@@ -1285,16 +1238,12 @@
         }
 
         function startSlideTimer() { slideInterval = setInterval(nextSlide, 5000); }
-
         indicators.forEach((ind, index) => {
             ind.addEventListener('click', () => { clearInterval(slideInterval); changeSlide(index); startSlideTimer(); });
         });
-
         startSlideTimer();
 
-        // ========================================
-        // COUNTER ANIMATION
-        // ========================================
+        // Counter Animation
         const counters = document.querySelectorAll('.stat-number');
         let hasAnimated = false;
         const animateCounters = () => {
