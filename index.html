@@ -116,7 +116,7 @@
         }
 
         /* ========================================
-           HERO SECTION (UPDATED: MORE LEFT ALIGNED)
+           HERO SECTION (FIXED: SUPER LEFT ALIGNED)
         ======================================== */
         .hero {
             min-height: 100vh;
@@ -150,21 +150,21 @@
             z-index: 2;
         }
 
-        /* Hero Content Container - Custom Padding for Left Alignment */
+        /* Hero Content Container - DIPERBAIKI: Padding Kiri Fixed Kecil */
         .hero .container {
-            /* Padding kiri diperkecil agar lebih mepet, kanan diperlebar untuk keseimbangan visual */
-            padding-left: 5%; 
-            padding-right: 10%;
-            max-width: 100%; /* Full width utilization */
+            /* Padding kiri diubah jadi 40px (fixed) agar mepet, tidak pakai persen */
+            padding-left: 40px; 
+            padding-right: 20px;
+            max-width: 100%; 
+            width: 100%;
         }
 
         .hero-content {
             position: relative;
             z-index: 3;
             color: var(--white);
-            /* Max-width diperbesar agar teks bisa lebih panjang ke kanan, tapi tetap start dari kiri */
-            max-width: 900px; 
-            margin-left: 0; /* Force left align */
+            max-width: 850px; 
+            margin-left: 0; 
             text-align: left;
         }
 
@@ -184,7 +184,7 @@
         .hero-badge i { color: var(--secondary-color); }
 
         .hero-title {
-            font-size: 4rem; /* Diperbesar sedikit */
+            font-size: 4rem; 
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 25px;
@@ -203,7 +203,6 @@
             font-size: 1.25rem;
             opacity: 0.9;
             margin-bottom: 35px;
-            /* Subtitle dibuat agak lebar tapi tetap rata kiri */
             max-width: 700px; 
             animation: fadeInLeft 0.6s ease 0.4s both;
         }
@@ -283,7 +282,7 @@
         .slider-indicators {
             position: absolute;
             bottom: 120px;
-            right: 5%; /* Sesuaikan dengan padding kanan container */
+            right: 40px; /* Sesuaikan dengan padding kanan */
             z-index: 10;
             display: flex;
             flex-direction: column;
