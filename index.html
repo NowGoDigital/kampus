@@ -44,7 +44,6 @@
             background-color: var(--light-color);
         }
 
-        /* Container Global */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -116,7 +115,7 @@
         }
 
         /* ========================================
-           HERO SECTION (FIXED: SUPER LEFT ALIGNED)
+           HERO SECTION (MULTI-SLIDE CONTENT)
         ======================================== */
         .hero {
             min-height: 100vh;
@@ -128,7 +127,7 @@
             background-color: var(--primary-color);
         }
 
-        /* Slider Backgrounds */
+        /* Background Slides */
         .hero-slider-bg {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -142,7 +141,6 @@
 
         .hero-slider-bg.active { opacity: 1; transform: scale(1); }
 
-        /* Overlay Gradient Biru */
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -150,22 +148,27 @@
             z-index: 2;
         }
 
-        /* Hero Content Container - DIPERBAIKI: Padding Kiri Fixed Kecil */
         .hero .container {
-            /* Padding kiri diubah jadi 40px (fixed) agar mepet, tidak pakai persen */
             padding-left: 40px; 
             padding-right: 20px;
             max-width: 100%; 
             width: 100%;
-        }
-
-        .hero-content {
             position: relative;
             z-index: 3;
+        }
+
+        /* Content Slides Wrapper */
+        .hero-content-slide {
+            display: none; /* Hidden by default */
             color: var(--white);
             max-width: 850px; 
             margin-left: 0; 
             text-align: left;
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+
+        .hero-content-slide.active {
+            display: block;
         }
 
         .hero-badge {
@@ -178,7 +181,6 @@
             border-radius: 50px;
             font-size: 0.9rem;
             margin-bottom: 25px;
-            animation: fadeInLeft 0.6s ease;
         }
 
         .hero-badge i { color: var(--secondary-color); }
@@ -188,7 +190,6 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 25px;
-            animation: fadeInLeft 0.6s ease 0.2s both;
             letter-spacing: -1px;
         }
 
@@ -204,14 +205,12 @@
             opacity: 0.9;
             margin-bottom: 35px;
             max-width: 700px; 
-            animation: fadeInLeft 0.6s ease 0.4s both;
         }
 
         .hero-buttons {
             display: flex;
             gap: 15px;
             margin-bottom: 60px;
-            animation: fadeInLeft 0.6s ease 0.6s both;
         }
 
         .btn {
@@ -253,7 +252,6 @@
         .hero-stats {
             display: flex;
             gap: 50px;
-            animation: fadeInUp 0.6s ease 0.8s both;
         }
 
         .stat-item { text-align: left; }
@@ -282,7 +280,7 @@
         .slider-indicators {
             position: absolute;
             bottom: 120px;
-            right: 40px; /* Sesuaikan dengan padding kanan */
+            right: 40px;
             z-index: 10;
             display: flex;
             flex-direction: column;
@@ -659,7 +657,7 @@
             .nav-links.active { transform: translateY(0); }
             
             .hero { text-align: center; justify-content: center; }
-            .hero-content { margin-left: auto; margin-right: auto; text-align: center; }
+            .hero-content-slide { margin-left: auto; margin-right: auto; text-align: center; }
             .hero-buttons { justify-content: center; }
             .hero-stats { justify-content: center; }
             .hero-title { font-size: 2.5rem; }
@@ -704,9 +702,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Slider & Wave -->
+    <!-- Hero Section with Multi-Slide Content -->
     <section class="hero" id="home">
-        <!-- Background Slides -->
+        <!-- Background Slides (3 Images) -->
         <div class="hero-slider-bg active" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop');"></div>
         <div class="hero-slider-bg" style="background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a782?q=80&w=2070&auto=format&fit=crop');"></div>
         <div class="hero-slider-bg" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop');"></div>
@@ -714,7 +712,8 @@
         <div class="hero-overlay"></div>
         
         <div class="container">
-            <div class="hero-content">
+            <!-- Slide Content 1: Karir -->
+            <div class="hero-content-slide active" data-index="0">
                 <div class="hero-badge">
                     <i class="fas fa-star"></i>
                     <span>Pendidikan Vokasi #1 di NTB</span>
@@ -727,28 +726,61 @@
                     P4M Mataram menghadirkan pendidikan vokasi berbasis industri dengan fasilitas modern dan kurikulum internasional untuk memastikan Anda siap kerja dalam waktu singkat.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#programs" class="btn btn-primary">
-                        <i class="fas fa-book-open"></i>
-                        Lihat Program
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-phone-alt"></i>
-                        Hubungi Kami
-                    </a>
+                    <a href="#programs" class="btn btn-primary"><i class="fas fa-book-open"></i> Lihat Program</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Hubungi Kami</a>
                 </div>
                 <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="1200">0</div>
-                        <div class="stat-label">Alumni Sukses</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="98">0</div>
-                        <div class="stat-label">% Terserap Kerja</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="50">0</div>
-                        <div class="stat-label">Mitra Industri</div>
-                    </div>
+                    <div class="stat-item"><div class="stat-number" data-target="1200">0</div><div class="stat-label">Alumni Sukses</div></div>
+                    <div class="stat-item"><div class="stat-number" data-target="98">0</div><div class="stat-label">% Terserap Kerja</div></div>
+                    <div class="stat-item"><div class="stat-number" data-target="50">0</div><div class="stat-label">Mitra Industri</div></div>
+                </div>
+            </div>
+
+            <!-- Slide Content 2: Fasilitas & Skill -->
+            <div class="hero-content-slide" data-index="1">
+                <div class="hero-badge">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Fasilitas Standar Industri</span>
+                </div>
+                <h1 class="hero-title">
+                    Kuasai Skill <br>
+                    <span class="gradient-text">Praktis</span> Masa Kini
+                </h1>
+                <p class="hero-subtitle">
+                    Belajar langsung dengan peralatan terkini di laboratorium komputer, studio desain, dan mockup hotel. Kurikulum kami 70% praktek, 30% teori untuk hasil maksimal.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary"><i class="fas fa-building"></i> Virtual Tour</a>
+                    <a href="#programs" class="btn btn-outline"><i class="fas fa-list"></i> Detail Kurikulum</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item"><div class="stat-number" data-target="15">0</div><div class="stat-label">Lab Modern</div></div>
+                    <div class="stat-item"><div class="stat-number" data-target="70">0</div><div class="stat-label">% Praktek Langsung</div></div>
+                    <div class="stat-item"><div class="stat-number" data-target="100">0</div><div class="stat-label">% Sertifikasi</div></div>
+                </div>
+            </div>
+
+            <!-- Slide Content 3: Jaringan & Kerjasama -->
+            <div class="hero-content-slide" data-index="2">
+                <div class="hero-badge">
+                    <i class="fas fa-handshake"></i>
+                    <span>Jaringan Kerjasama Luas</span>
+                </div>
+                <h1 class="hero-title">
+                    Jembatan Menuju <br>
+                    <span class="gradient-text">Dunia Kerja</span> Global
+                </h1>
+                <p class="hero-subtitle">
+                    Kami bekerjasama dengan 50+ perusahaan mitra nasional dan internasional. Lulusan P4M Mataram diprioritaskan untuk magang dan penempatan kerja di perusahaan ternama.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#testimonials" class="btn btn-primary"><i class="fas fa-users"></i> Cerita Alumni</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-file-alt"></i> Daftar Sekarang</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item"><div class="stat-number" data-target="50">0</div><div class="stat-label">Perusahaan Mitra</div></div>
+                    <div class="stat-item"><div class="stat-number" data-target="12">0</div><div class="stat-label">Negara Tujuan</div></div>
+                    <div class="stat-item"><div class="stat-number" data-target="95">0</div><div class="stat-label">% Kepuasan Mitra</div></div>
                 </div>
             </div>
         </div>
@@ -1140,30 +1172,46 @@
         // Scroll Top
         scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // Hero Slider
+        // ========================================
+        // HERO SLIDER LOGIC (Sync BG + Text)
+        // ========================================
         const heroSlides = document.querySelectorAll('.hero-slider-bg');
+        const heroContents = document.querySelectorAll('.hero-content-slide');
         const indicators = document.querySelectorAll('.indicator');
         let currentSlideIndex = 0;
         let slideInterval;
+
         function changeSlide(index) {
-            heroSlides[currentSlideIndex].classList.remove('active');
-            indicators[currentSlideIndex].classList.remove('active');
+            // Remove active from all
+            heroSlides.forEach(s => s.classList.remove('active'));
+            heroContents.forEach(c => c.classList.remove('active'));
+            indicators.forEach(i => i.classList.remove('active'));
+
+            // Add active to current
+            heroSlides[index].classList.add('active');
+            heroContents[index].classList.add('active');
+            indicators[index].classList.add('active');
+            
             currentSlideIndex = index;
-            heroSlides[currentSlideIndex].classList.add('active');
-            indicators[currentSlideIndex].classList.add('active');
         }
+
         function nextSlide() {
             let nextIndex = currentSlideIndex + 1;
             if (nextIndex >= heroSlides.length) nextIndex = 0;
             changeSlide(nextIndex);
         }
+
         function startSlideTimer() { slideInterval = setInterval(nextSlide, 5000); }
+
         indicators.forEach((ind, index) => {
             ind.addEventListener('click', () => { clearInterval(slideInterval); changeSlide(index); startSlideTimer(); });
         });
+
         startSlideTimer();
 
-        // Counter Animation
+        // ========================================
+        // COUNTER ANIMATION (Re-trigger on slide change optional, but keeping simple)
+        // ========================================
         const counters = document.querySelectorAll('.stat-number');
         let hasAnimated = false;
         const animateCounters = () => {
@@ -1183,7 +1231,9 @@
         }, { threshold: 0.5 });
         if (document.querySelector('.hero')) observer.observe(document.querySelector('.hero'));
 
-        // Testimonials Slider
+        // ========================================
+        // TESTIMONIALS SLIDER
+        // ========================================
         const testimonialCards = document.querySelectorAll('.testimonial-card');
         const dots = document.querySelectorAll('.dot');
         const prevBtn = document.getElementById('prevBtn');
