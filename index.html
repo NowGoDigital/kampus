@@ -31,9 +31,10 @@
             --gradient-secondary: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
             --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
-            --shadow-lg: 0 10px 15px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
             --transition: all 0.3s ease;
-            --border-radius: 16px; /* Sedikit lebih bulat untuk kesan modern minimalis */
+            --border-radius: 16px;
         }
 
         html { scroll-behavior: smooth; }
@@ -43,7 +44,7 @@
             line-height: 1.6;
             color: var(--dark-color);
             overflow-x: hidden;
-            background-color: var(--white); /* Background utama putih bersih */
+            background-color: var(--white);
         }
 
         .container {
@@ -525,7 +526,7 @@
             border: 1px solid #eee;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Rata kiri untuk kesan minimalis */
+            align-items: flex-start;
             text-align: left;
         }
 
@@ -535,7 +536,6 @@
             border-color: #ddd;
         }
 
-        /* Header Card: Foto + Nama */
         .testimonial-header {
             display: flex;
             align-items: center;
@@ -545,7 +545,7 @@
         }
 
         .testimonial-image {
-            width: 50px; /* Lebih kecil */
+            width: 50px;
             height: 50px;
             border-radius: 50%;
             overflow: hidden;
@@ -580,7 +580,7 @@
             color: var(--gray-color);
             line-height: 1.6;
             margin: 0;
-            font-style: normal; /* Tidak italic agar lebih clean */
+            font-style: normal;
         }
 
         /* ========================================
@@ -593,49 +593,246 @@
         .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
         /* ========================================
-           CONTACT SECTION
+           CONTACT SECTION (WOW DESIGN)
         ======================================== */
-        .contact { background: var(--white); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; }
-        .contact-info { display: flex; flex-direction: column; gap: 20px; }
+        .contact { 
+            background: var(--light-color); 
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
 
-        .info-card {
-            display: flex; gap: 20px; align-items: center; background: var(--white);
-            padding: 20px; border-radius: var(--border-radius); border: 1px solid #eee;
+        /* Decorative Background Elements */
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr; /* Info lebih kecil, Form lebih besar */
+            gap: 0; /* No gap, connected design */
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Left Side: Info (Dark Theme) */
+        .contact-info-wrapper {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 60px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Pattern Overlay */
+        .contact-info-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .contact-info-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .contact-info-desc {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .info-icon-box {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
             transition: var(--transition);
         }
 
-        .info-card:hover { border-color: var(--primary-light); box-shadow: var(--shadow-sm); }
-
-        .info-icon {
-            width: 45px; height: 45px; background: var(--light-color); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        .info-item:hover .info-icon-box {
+            background: var(--secondary-color);
             color: var(--primary-color);
+            transform: scale(1.1);
         }
 
-        .info-card h4 { margin-bottom: 2px; color: var(--dark-color); font-size: 1rem; }
-        .info-card p { color: var(--gray-color); font-size: 0.9rem; margin: 0; }
+        .info-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
 
+        .info-text p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .social-contact {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .social-contact a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-contact a:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Right Side: Form (Light Theme) */
         .contact-form-wrapper {
-            background: var(--white); padding: 40px; border-radius: var(--border-radius);
-            border: 1px solid #eee;
-            box-shadow: var(--shadow-sm);
+            padding: 60px 50px;
+            background: var(--white);
         }
 
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--dark-color); font-size: 0.9rem; }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px;
-            font-family: 'Poppins', sans-serif; font-size: 1rem; transition: var(--transition); background: var(--white);
+        .form-header {
+            margin-bottom: 30px;
         }
 
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none; border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        .form-header h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
         }
 
-        .btn-full { width: 100%; justify-content: center; background: var(--primary-color); color: white; }
-        .btn-full:hover { background: var(--primary-light); }
+        .form-header p {
+            color: var(--gray-color);
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: #F9FAFB;
+            color: var(--dark-color);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+            background: var(--primary-light);
+        }
+
+        /* Map Embed Placeholder */
+        .map-container {
+            margin-top: 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 200px;
+            background: #e5e7eb;
+            position: relative;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
         /* ========================================
            FOOTER
@@ -697,7 +894,7 @@
             .hero-title { font-size: 3rem; }
             .hero .container { padding-left: 20px; padding-right: 20px; }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .contact-grid { grid-template-columns: 1fr; }
+            .contact-container { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
         }
@@ -732,6 +929,8 @@
             .slider-indicators { display: none; }
             
             .testimonials-grid { grid-template-columns: 1fr; }
+            
+            .contact-info-wrapper, .contact-form-wrapper { padding: 40px 30px; }
         }
     </style>
 </head>
@@ -990,7 +1189,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section (MINIMALIS GRID) -->
+    <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header">
@@ -1000,61 +1199,29 @@
             </div>
             
             <div class="testimonials-grid">
-                <!-- Card 1 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-image">
-                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 1">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Ahmad Rizki</h4>
-                            <span>Staff Hotel Bintang 5</span>
-                        </div>
+                        <div class="testimonial-image"><img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 1"></div>
+                        <div class="testimonial-info"><h4>Ahmad Rizki</h4><span>Staff Hotel Bintang 5</span></div>
                     </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <div class="testimonial-content">
-                        <p>"Pendidikan di P4M sangat praktis. Saya langsung mendapat pekerjaan setelah lulus berkat jaringan industri yang kuat."</p>
-                    </div>
+                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="testimonial-content"><p>"Pendidikan di P4M sangat praktis. Saya langsung mendapat pekerjaan setelah lulus berkat jaringan industri yang kuat."</p></div>
                 </div>
-
-                <!-- Card 2 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-image">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 2">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Siti Nurhaliza</h4>
-                            <span>Digital Marketing</span>
-                        </div>
+                        <div class="testimonial-image"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 2"></div>
+                        <div class="testimonial-info"><h4>Siti Nurhaliza</h4><span>Digital Marketing</span></div>
                     </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <div class="testimonial-content">
-                        <p>"Kurikulum update dan pengajar berpengalaman membuat saya siap menghadapi tantangan dunia kerja digital."</p>
-                    </div>
+                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="testimonial-content"><p>"Kurikulum update dan pengajar berpengalaman membuat saya siap menghadapi tantangan dunia kerja digital."</p></div>
                 </div>
-
-                <!-- Card 3 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-image">
-                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 3">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Budi Santoso</h4>
-                            <span>Freelance Designer</span>
-                        </div>
+                        <div class="testimonial-image"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=150&h=150" alt="Alumni 3"></div>
+                        <div class="testimonial-info"><h4>Budi Santoso</h4><span>Freelance Designer</span></div>
                     </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <div class="testimonial-content">
-                        <p>"Fasilitas lengkap dan lingkungan belajar kondusif. Skill design grafis saya berkembang pesat di sini."</p>
-                    </div>
+                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="testimonial-content"><p>"Fasilitas lengkap dan lingkungan belajar kondusif. Skill design grafis saya berkembang pesat di sini."</p></div>
                 </div>
             </div>
         </div>
@@ -1071,42 +1238,85 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (WOW DESIGN) -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Kontak</span>
-                <h2 class="section-title">Hubungi <span class="highlight">Kami</span></h2>
-                <p class="section-subtitle">Tim kami siap membantu menjawab pertanyaan Anda</p>
+                <span class="section-tag">Hubungi Kami</span>
+                <h2 class="section-title">Mari <span class="highlight">Terhubung</span></h2>
+                <p class="section-subtitle">Kami siap membantu menjawab pertanyaan seputar pendaftaran dan program studi</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="info-card">
-                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div><h4>Alamat</h4><p>Jl. Pendidikan No. 123, Mataram, NTB</p></div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
-                        <div><h4>Telepon</h4><p>+62 812-3456-7890</p></div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                        <div><h4>Email</h4><p>info@p4mmataram.ac.id</p></div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                        <div><h4>Jam Operasional</h4><p>Senin - Jumat: 08.00 - 16.00 WITA</p></div>
+
+            <div class="contact-container">
+                <!-- Left Side: Info -->
+                <div class="contact-info-wrapper">
+                    <div class="contact-info-content">
+                        <h3 class="contact-info-title">Informasi Kontak</h3>
+                        <p class="contact-info-desc">Silakan hubungi kami melalui saluran berikut atau kunjungi kampus kami secara langsung.</p>
+                        
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="info-icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="info-text">
+                                    <h4>Alamat Kampus</h4>
+                                    <p>Jl. Pendidikan Vokasi No. 88, Mataram, NTB 83126</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon-box"><i class="fas fa-phone-alt"></i></div>
+                                <div class="info-text">
+                                    <h4>Telepon / WhatsApp</h4>
+                                    <p>+62 812-3456-7890</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon-box"><i class="fas fa-envelope"></i></div>
+                                <div class="info-text">
+                                    <h4>Email Resmi</h4>
+                                    <p>admissions@p4mmataram.ac.id</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon-box"><i class="fas fa-clock"></i></div>
+                                <div class="info-text">
+                                    <h4>Jam Operasional</h4>
+                                    <p>Senin - Jumat: 08.00 - 16.00 WITA</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-contact">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Right Side: Form -->
                 <div class="contact-form-wrapper">
+                    <div class="form-header">
+                        <h3>Kirim Pesan</h3>
+                        <p>Isi formulir di bawah ini dan tim kami akan segera menghubungi Anda.</p>
+                    </div>
                     <form class="contact-form" id="contactForm">
-                        <div class="form-group"><label for="name">Nama Lengkap</label><input type="text" id="name" name="name" required placeholder="Masukkan nama lengkap"></div>
-                        <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required placeholder="contoh@email.com"></div>
-                        <div class="form-group"><label for="phone">No. Telepon</label><input type="tel" id="phone" name="phone" required placeholder="+62 xxx-xxxx-xxxx"></div>
                         <div class="form-group">
-                            <label for="program">Program yang Diminati</label>
-                            <select id="program" name="program" required>
-                                <option value="">Pilih Program</option>
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" class="form-control" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" id="email" class="form-control" required placeholder="contoh@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor WhatsApp</label>
+                            <input type="tel" id="phone" class="form-control" required placeholder="+62 xxx-xxxx-xxxx">
+                        </div>
+                        <div class="form-group">
+                            <label for="program">Program Diminati</label>
+                            <select id="program" class="form-control" required>
+                                <option value="">-- Pilih Program --</option>
                                 <option value="perhotelan">Manajemen Perhotelan</option>
                                 <option value="digital-bisnis">Digital Bisnis</option>
                                 <option value="administrasi">Administrasi Perkantoran</option>
@@ -1114,9 +1324,20 @@
                                 <option value="design-grafis">Desain Grafis</option>
                             </select>
                         </div>
-                        <div class="form-group"><label for="message">Pesan</label><textarea id="message" name="message" rows="4" placeholder="Tulis pesan atau pertanyaan Anda..."></textarea></div>
-                        <button type="submit" class="btn btn-full">Kirim Pesan</button>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Tulis pertanyaan Anda..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Kirim Pendaftaran
+                        </button>
                     </form>
+
+                    <!-- Map Embed -->
+                    <div class="map-container">
+                        <!-- Using a generic Mataram map embed -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63438.73632983845!2d116.083333!3d-8.583333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdb7d6438275ab%3A0x4030bfbcaf770b0!2sMataram%2C%20West%20Nusa%20Tenggara!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
